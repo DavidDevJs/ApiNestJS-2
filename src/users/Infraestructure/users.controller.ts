@@ -9,22 +9,25 @@ import {
   Post,
 } from '@nestjs/common';
 import { CreateUserDto, UpdateUserDto } from '../Domain/user.dtos';
+import { UsersService } from '../Application/users.service';
 
 @Controller('users')
 export class UsersController {
+  constructor(private usersService: UsersService) {}
+
   @Post()
   create(@Body() payload: CreateUserDto) {
-    return `Se ha creado el usuario con los siguientes datos ${payload}`;
+    return this.usersService.create(payload);
   }
 
   @Get()
   getAll() {
-    return 'Todos los usuarios';
+    return this.usersService.findAll();
   }
 
   @Get(':id')
   getOne(@Param('id', ParseIntPipe) id: number) {
-    return `Usuario con id ${id}`;
+    return this.usersService.findOne(id);
   }
 
   @Put(':id')
@@ -32,11 +35,11 @@ export class UsersController {
     @Param('id', ParseIntPipe) id: number,
     @Body() payload: UpdateUserDto,
   ) {
-    return `Usuario con id ${id} actualizado con la siguiente ingo ${payload}`;
+    return this.usersService.update(id, payload);
   }
 
   @Delete(':id')
   delete(@Param('id', ParseIntPipe) id: number) {
-    return `Eliminado el usuario ${id}`;
+    return this.usersService.delete(id);
   }
 }
