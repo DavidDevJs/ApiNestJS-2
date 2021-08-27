@@ -1,5 +1,5 @@
 import { PartialType } from '@nestjs/mapped-types';
-import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsDate, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class CreateOrderDto {
   @IsNumber()
@@ -11,12 +11,12 @@ export class CreateOrderDto {
   @IsString()
   @IsNotEmpty()
   shippingAddress: string;
-  @IsString()
+  @IsDate()
   @IsNotEmpty()
-  createAt: string;
-  @IsString()
+  createAt: Date;
+  @IsDate()
   @IsNotEmpty()
-  updateAt: string;
+  updateAt: Date;
   @IsString()
   @IsNotEmpty()
   status: string;
