@@ -4,9 +4,14 @@ import { CreateUserDto, UpdateUserDto } from '../domain/user.dtos';
 import { User } from '../domain/user.entity';
 import { ProductsService } from 'src/productos/application/products.service';
 
+import { ConfigService } from '@nestjs/config';
+
 @Injectable()
 export class UsersService {
-  constructor(private productService: ProductsService) {}
+  constructor(
+    private productService: ProductsService,
+    private configService: ConfigService,
+  ) {}
 
   private idAutoIncrement = 0;
 
@@ -26,6 +31,9 @@ export class UsersService {
   ];
 
   findAll() {
+    const apiKey = this.configService.get('API_KEY');
+    const dbName = this.configService.get('DATABASE_NAME');
+    console.log(apiKey, dbName);
     return this.Users;
   }
 
