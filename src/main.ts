@@ -16,7 +16,6 @@ async function bootstrap() {
     .setTitle('Api Sistema de Inventarios')
     .setDescription('Sistema Inventarios API descripcion')
     .setVersion('1.0')
-    .addTag('cats')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
