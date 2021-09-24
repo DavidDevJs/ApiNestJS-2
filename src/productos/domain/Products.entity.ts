@@ -5,23 +5,23 @@ export class Product {
   @PrimaryGeneratedColumn()
   id: number;
   @Column({ type: 'varchar', length: 255 })
-  nombre: string;
+  name: string;
   @Column({ type: 'text' })
   description: string;
-  @Column({ type: 'mediumint', unique: true })
+  @Column({ type: 'int' })
   numSerial: number;
   @Column({ type: 'varchar', length: 50 })
-  marca: string;
+  brand: string;
   @Column({ type: 'boolean' })
   status: boolean;
   @Column({ type: 'int' })
-  cantidad: number;
+  amount: number;
   @Column({ type: 'int' })
-  precio: number;
+  price: number;
   @Column({ type: 'timestamp' })
   creatAt: string;
   @Column({ type: 'timestamp' })
   updateAt: string;
   @Column({ type: 'varchar', length: 50 })
-  categoria: string;
+  category: string;
 }

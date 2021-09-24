@@ -5,7 +5,11 @@ export class CreateProductDto {
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
-  readonly nombre: string;
+  readonly name: string;
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  readonly description: string;
   @ApiProperty()
   @IsNumber()
   @IsNotEmpty()
@@ -13,7 +17,7 @@ export class CreateProductDto {
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
-  readonly marca: string;
+  readonly brand: string;
   @ApiProperty()
   @IsBoolean()
   @IsNotEmpty()
@@ -21,11 +25,11 @@ export class CreateProductDto {
   @ApiProperty()
   @IsNumber()
   @IsNotEmpty()
-  readonly cantidad: number;
+  readonly amount: number;
   @ApiProperty()
   @IsNumber()
   @IsNotEmpty()
-  readonly precio: number;
+  readonly price: number;
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
@@ -37,7 +41,7 @@ export class CreateProductDto {
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
-  readonly categoria: string;
+  readonly category: string;
 }
 
 export class UpdateProductDto extends PartialType(CreateProductDto) {}
