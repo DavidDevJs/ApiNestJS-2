@@ -12,9 +12,9 @@ export class Order {
   details: string;
   @Column({ type: 'varchar', length: 50 })
   shippingAddress: string;
-  @Column({ type: 'datetime' })
+  @Column({ type: 'timestamp' })
   createAt: Date;
-  @Column({ type: 'datetime' })
+  @Column({ type: 'timestamp' })
   updateAt?: Date;
   @Column({ type: 'varchar', length: 10 })
   status: string;

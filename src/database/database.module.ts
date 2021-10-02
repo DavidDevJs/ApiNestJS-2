@@ -20,6 +20,7 @@ import config from '../config';
           username: user,
           password,
           database: dbName,
+          //Synchronize must be false in production environments
           synchronize: true,
           autoLoadEntities: true,
         };
