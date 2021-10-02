@@ -16,10 +16,6 @@ export class User {
   phoneNumber: string;
   @Column({ type: 'varchar', length: 60 })
   address: string;
-  @Column({ type: 'timestamp' })
-  createAt: string;
-  @Column({ type: 'timestamp' })
-  updateAt: string;
   @Column({ type: 'boolean' })
   status: boolean;
 }

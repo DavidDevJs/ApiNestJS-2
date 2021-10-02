@@ -18,10 +18,6 @@ export class Product {
   amount: number;
   @Column({ type: 'int' })
   price: number;
-  @Column({ type: 'timestamp' })
-  creatAt: string;
-  @Column({ type: 'timestamp' })
-  updateAt: string;
   @Column({ type: 'varchar', length: 50 })
   category: string;
 }

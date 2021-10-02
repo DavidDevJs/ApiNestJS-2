@@ -33,14 +33,6 @@ export class CreateProductDto {
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
-  readonly creatAt: string;
-  @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
-  readonly updateAt: string;
-  @ApiProperty()
-  @IsString()
-  @IsNotEmpty()
   readonly category: string;
 }
 

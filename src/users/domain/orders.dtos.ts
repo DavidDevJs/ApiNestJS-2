@@ -1,5 +1,5 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
-import { IsDate, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class CreateOrderDto {
   @ApiProperty()
@@ -14,14 +14,6 @@ export class CreateOrderDto {
   @IsString()
   @IsNotEmpty()
   shippingAddress: string;
-  @ApiProperty()
-  @IsDate()
-  @IsNotEmpty()
-  createAt: Date;
-  @ApiProperty()
-  @IsDate()
-  @IsNotEmpty()
-  updateAt: Date;
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
